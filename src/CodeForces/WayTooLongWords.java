@@ -11,10 +11,9 @@ public class WayTooLongWords {
             if (s.length() <= 10) {
                 System.out.println(s);
             } else {
-                StringBuilder str = new StringBuilder();
-                str.append(s.charAt(0));
-                str.append(s.length() - 2);
-                str.append(s.charAt(s.length() - 1));
+                String str = String.valueOf(s.charAt(0)) +
+                        (s.length() - 2) +
+                        s.charAt(s.length() - 1);
                 System.out.println(str);
             }
         }
