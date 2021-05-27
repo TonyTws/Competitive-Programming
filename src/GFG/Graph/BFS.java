@@ -1,5 +1,7 @@
 package GFG.Graph;
 
+import CustomClasses.Graph;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -7,6 +9,10 @@ import java.util.Queue;
 
 public class BFS {
     public static void main(String[] args) {
+        Graph graph = new Graph();
+        ArrayList<ArrayList<Integer>> adj = graph.createGraph();
+        for (Integer i : bfsOfGraph(graph.V, adj))
+            System.out.println(i);
 
     }
 
