@@ -1,26 +1,15 @@
 package GFG.Graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BFS {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int V = sc.nextInt(), E = sc.nextInt();
-        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
-        for (int i = 0; i < V; i++)
-            adj.add(new ArrayList<>());
 
-        for (int i = 0; i < E; i++) {
-            int u = sc.nextInt(), v = sc.nextInt();
-            addEdge(adj, u, v);
-        }
-        ArrayList<Integer> ans = bfsOfGraph(V, adj);
     }
 
-    public static void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
-        adj.get(u).add(v);
-        adj.get(v).add(u);
-    }
 
     public static ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
         ArrayList<Integer> ans = new ArrayList<>();
