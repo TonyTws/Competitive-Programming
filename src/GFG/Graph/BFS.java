@@ -10,7 +10,7 @@ import java.util.Queue;
 public class BFS {
     public static void main(String[] args) {
         Graph graph = new Graph();
-        ArrayList<ArrayList<Integer>> adj = graph.createGraph();
+        ArrayList<ArrayList<Integer>> adj = graph.createUndirectedGraph();
         for (Integer i : bfsOfGraph(graph.V, adj))
             System.out.println(i);
 

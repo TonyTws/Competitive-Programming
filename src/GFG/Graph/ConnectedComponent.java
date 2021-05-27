@@ -9,7 +9,7 @@ public class ConnectedComponent {
 
     public static void main(String[] args) {
         Graph graph = new Graph();
-        ArrayList<ArrayList<Integer>> adj = graph.createGraph();
+        ArrayList<ArrayList<Integer>> adj = graph.createUndirectedGraph();
         System.out.println("Connected Component : " + DFS(adj, graph.V));
 
     }

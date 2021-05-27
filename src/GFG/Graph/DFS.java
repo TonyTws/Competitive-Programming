@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class DFS {
     public static void main(String[] args) {
         Graph graph = new Graph();
-        ArrayList<ArrayList<Integer>> adj = graph.createGraph();
+        ArrayList<ArrayList<Integer>> adj = graph.createUndirectedGraph();
         for (Integer i : dfsOfGraph(graph.V, adj))
             System.out.println(i);
 

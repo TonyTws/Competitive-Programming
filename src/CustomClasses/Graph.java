@@ -6,25 +6,46 @@ import java.util.Scanner;
 
 public class Graph {
     public int V, E;
+    final private Scanner sc;
 
-    public ArrayList<ArrayList<Integer>> createGraph() {
-        Scanner sc = new Scanner(System.in);
-        V = sc.nextInt();
-        E = sc.nextInt();
+    public Graph() {
+        sc = new Scanner(System.in);
+        this.V = sc.nextInt();
+        this.E = sc.nextInt();
+    }
+
+
+    public ArrayList<ArrayList<Integer>> createUndirectedGraph() {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++)
             adj.add(new ArrayList<>());
 
         for (int i = 0; i < E; i++) {
             int u = sc.nextInt(), v = sc.nextInt();
-            addEdge(adj, u, v);
+            addEdgeUndirected(adj, u, v);
         }
         return adj;
     }
 
-    private void addEdge(ArrayList<ArrayList<Integer>> adj, int u, int v) {
+    public ArrayList<ArrayList<Integer>> createDirectedGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < V; i++)
+            adj.add(new ArrayList<>());
+
+        for (int i = 0; i < E; i++) {
+            int u = sc.nextInt(), v = sc.nextInt();
+            addEdgeDirected(adj, u, v);
+        }
+        return adj;
+    }
+
+    private void addEdgeUndirected(ArrayList<ArrayList<Integer>> adj, int u, int v) {
         adj.get(u).add(v);
         adj.get(v).add(u);
+    }
+
+    private void addEdgeDirected(ArrayList<ArrayList<Integer>> adj, int u, int v) {
+        adj.get(u).add(v);
     }
 
     public void printG(ArrayList<ArrayList<Integer>> adj) {
